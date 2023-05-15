@@ -9,6 +9,7 @@ public:
 	void SetRect(const int& x, const int& y) { rect.x = x, rect.y = y; }
 	int getXPOS() { return rect.x; }
 	int getYPOS() { return rect.y; }
+	int getWidth() { return rect.w; }
 	SDL_Rect GetRect() { return rect; }
 	SDL_Texture* GetTexture() { return texture; } //lay ra texture
 

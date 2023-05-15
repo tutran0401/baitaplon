@@ -12,7 +12,7 @@
 #include <string>
 #include <SDL2/SDL_mixer.h>
 #include <random>
-
+#include <string>
 static SDL_Window* window = NULL;
 static SDL_Renderer* screen = NULL;
 static SDL_Event event;

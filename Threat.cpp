@@ -1,8 +1,9 @@
 #include "Threat.h"
+#include <algorithm>
 int RandomPOS() {
 	int minVal=0;
-	 int maxVal=380;
-	  int minDist=20;
+	int maxVal=360;
+	int minDist=50;
     static bool initialized = false;
     if (!initialized) {
         std::srand(std::time(nullptr));
@@ -14,7 +15,6 @@ int RandomPOS() {
     int randomValue = (std::rand() % (rangeSize / dist)) * dist + minVal;
     return randomValue;
 }
-
 
 bool Threat::LoadImg(std::string path, SDL_Renderer* screen)
 {
@@ -37,15 +37,14 @@ void Threat::MoveThreat()
 	//
 	if (rect.x + THREAT_WIDTH < 0) {
 		rect.x = SCREEN_W;
-		int bien=RandomPOS();
-		
+		int bien=RandomPOS();	
 		rect.y = bien;
 	}
 }
 
 void Threat::MoveThreatLvUp()
 {
-	rect.x -= 5;
+	 rect.x -= 3;
 	// std::random_device rd;
 	// std::mt19937 gen(rd());
 	// std::uniform_int_distribution<> dis(0, 400 - THREAT_HEIGHT);
